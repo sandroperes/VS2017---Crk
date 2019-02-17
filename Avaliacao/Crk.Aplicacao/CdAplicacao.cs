@@ -86,7 +86,12 @@ namespace Crk.Aplicacao
                               .ToList();
         }
 
-
+        public void Excluir(int id)
+        {
+            Cd cdExcluir = context.Cds.First(x => x.cd_id == id);
+            context.Set<Cd>().Remove(cdExcluir);
+            context.SaveChanges();
+        }
 
     }
 }

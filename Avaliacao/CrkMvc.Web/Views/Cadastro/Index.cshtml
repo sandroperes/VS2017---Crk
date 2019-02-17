@@ -2,14 +2,15 @@
 @model IOrderedEnumerable<Cd>
 
 @{
-                /**/
+    /**/
 
-                ViewBag.Title = "Index";
+    ViewBag.Title = "Index";
 }
 
 @using (Html.BeginForm())
 {
     <input type="button" class="btn btn-small btn-danger" value="Nova Cd" onclick="location.href='@Url.Action("Create", "Cd")    '" />
+    <input type="button" class="btn btn-small btn-info" value="Relatorio" onclick="location.href='@Url.Action("Consulta", "Cd")    '" />
     <p></p>
 
     <table class="table table-striped">
@@ -59,12 +60,7 @@
         </tbody>
     </table>
     <br />
-    <div>
-        <p class="text-info">@TempData["Informacao"]</p>
-    </div>
     <br />
 
 }
-
-<h2>Index</h2>
 

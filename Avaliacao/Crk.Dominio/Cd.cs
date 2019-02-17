@@ -23,6 +23,12 @@ namespace Crk.Dominio
         public int? artista_id { get; set; }
         public virtual Artista Artista { get; set; }
 
+        [Display(Name = "Artista")]
+        public string artista { get; set; }
+
+        [Display(Name = "Genero Musical")]
+        public string generoMusical { get; set; }
+
         [Display(Name = "Genero Musical")]
         public int? generomusical_id { get; set; }
         public virtual GeneroMusical GeneroMusical { get; set; }
