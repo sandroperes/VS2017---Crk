@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace Crk.Dominio
 {
     [Table("generomusical", Schema = "public")]
-    class GeneroMusical : IComparable<GeneroMusical>
+    public class GeneroMusical : IComparable<GeneroMusical>
     {
-        [Key]
+        [Key] 
         public int generomusical_id { get; set; }
 
         [Required(ErrorMessage = "Descrição do Gênero Musical requirido.")]

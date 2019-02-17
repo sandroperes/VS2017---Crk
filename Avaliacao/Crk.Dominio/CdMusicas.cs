@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Crk.Dominio
 {
     [Table("cdmusicas", Schema = "public")]
-    class CdMusicas
+    public class CdMusicas
     {
         [Key]
         public int cdmusicas_id { get; set; }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Crk.Dominio
 {
     [Table("cd", Schema = "public")]
-    class Cd
+    public class Cd
     {
         [Key]
         public int cd_id { get; set; }
@@ -28,6 +28,6 @@ namespace Crk.Dominio
         public virtual GeneroMusical GeneroMusical { get; set; }
 
         public virtual ICollection<CdMusicas> CdMusicas { get; set; }
-
+         
     }
 }
