@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crk.Repositorio", "Crk.Repo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crk.Aplicacao", "Crk.Aplicacao\Crk.Aplicacao.csproj", "{AD2961AC-C514-419C-B140-9538B5550892}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrkMvc.Web", "CrkMvc.Web\CrkMvc.Web.csproj", "{7007D10D-1870-4980-9025-EA3B7E5D60D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AD2961AC-C514-419C-B140-9538B5550892}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD2961AC-C514-419C-B140-9538B5550892}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD2961AC-C514-419C-B140-9538B5550892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7007D10D-1870-4980-9025-EA3B7E5D60D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7007D10D-1870-4980-9025-EA3B7E5D60D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7007D10D-1870-4980-9025-EA3B7E5D60D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7007D10D-1870-4980-9025-EA3B7E5D60D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,70 @@
+﻿@using Crk.Dominio;
+@model IOrderedEnumerable<Cd>
+
+@{
+                /**/
+
+                ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm())
+{
+    <input type="button" class="btn btn-small btn-danger" value="Nova Cd" onclick="location.href='@Url.Action("Create", "Cd")    '" />
+    <p></p>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Titulo
+                </th>
+                <th>
+                    Artista
+                </th>
+                <th>
+                    Genero Musical
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (@ViewBag.Mensagem != null)
+            {
+                <tr>
+                    <td>
+                        <h3>
+                            @ViewBag.Mensagem
+                        </h3>
+                    </td>
+                </tr>
+            }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.titulo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Artista.nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GeneroMusical.descricao)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Musicas(" + item.CdMusicas.Count() + ")", "Musicas", new { id = item.cd_id })
+                        @Html.ActionLink("|   Delete", "Delete", new { id = item.cd_id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <div>
+        <p class="text-info">@TempData["Informacao"]</p>
+    </div>
+    <br />
+
+}
+
+<h2>Index</h2>
+
