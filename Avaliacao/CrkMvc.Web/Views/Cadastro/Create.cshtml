@@ -1,11 +1,99 @@
 ﻿@using Crk.Dominio;
 @model Crk.Dominio.Cd
 
+
 @{
     ViewBag.Title = "Novo CD";
 }
 
 
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    if (Model != null)
+    {
+        <input type="hidden" id="cd_id" name="cd_id" value="@Model.cd_id" />
+    }
+
+    <div class="row">
+        <div class="span2">@Html.LabelFor(model => model.titulo)</div>
+        <div class="span10">
+            @Html.EditorFor(model => model.titulo)
+            @Html.ValidationMessageFor(model => model.titulo)
+        </div>
+    </div>
+    <div class="row">
+        <div class="span2">@Html.LabelFor(model => model.artista_id)</div>
+        <div class="span10">
+            @Html.DropDownList("artista_id", (IEnumerable<SelectListItem>)ViewBag.artista_id, "Selecione o Artista")
+            @Html.ValidationMessageFor(model => model.artista_id)
+        </div>
+    </div>
+    <div class="row">
+        <div class="span2">@Html.LabelFor(model => model.generomusical_id)</div>
+        <div class="span10">
+            @Html.DropDownList("generomusical_id", (IEnumerable<SelectListItem>)ViewBag.generomusical_id, "Selecione o Genero Musical")
+            @Html.ValidationMessageFor(model => model.generomusical_id)
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2">@Html.LabelFor(model => model.nomeMusica</div>
+        <div class="span10">
+            @Html.EditorFor(model => model.nomeMusica)
+            @Html.ValidationMessageFor(model => model.nomeMusica)
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2">@Html.LabelFor(model => model.duracao)</div>
+        <div class="span10">
+            @Html.EditorFor(model => model.duracao)
+            @Html.ValidationMessageFor(model => model.duracao)
+        </div>
+    </div>
+
+    <input type="submit" class="btn btn-small btn-primary" value="Adicionar" />
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Musica</th>
+                <th>Duração</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @{
+                var items = ViewBag.listaCdMusicas as List<CdMusicas>;
+            }
+            @if (items != null)
+            {
+                foreach (var item in items)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayTextFor(i => item.nomeMusica)
+                        </td>
+                        <td>
+                            @Html.DisplayTextFor(i => item.duracao)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Delete", "DeleteCdMusicas", new { id = item.cdmusicas_id, cdMusicasId = item.cdmusicas_id })
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+
+
+    <input type="button" class="btn btn-small btn-primary" value="Cancelar" onclick="location.href='@Url.Action("Index", "Cadastro")    '" />
+    <input type="submit" class="btn btn-small btn-success" value="Salvar" />
+}
 
 
 
