@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crk.Aplicacao", "Crk.Aplica
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrkMvc.Web", "CrkMvc.Web\CrkMvc.Web.csproj", "{7007D10D-1870-4980-9025-EA3B7E5D60D1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{AF1B1BAA-4213-4457-9BDC-D794B27E6F13}"
+	ProjectSection(SolutionItems) = preProject
+		banco.sql = banco.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
