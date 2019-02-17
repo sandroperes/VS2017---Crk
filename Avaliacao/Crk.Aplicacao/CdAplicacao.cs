@@ -41,6 +41,14 @@ namespace Crk.Aplicacao
                               .ToList();
         }
 
+        public List<Cd> ListarCdsMusicas(int id)
+        {
+            return context.Cds.Include(x => x.Artista)
+                              .Include(x => x.GeneroMusical)
+                              .Include(f => f.CdMusicas)
+                              .Where(x=>x.cd_id == id)
+                              .ToList();
+        }
 
         public List<Cd> ListarCdsTitulo( string titulo)
         {
